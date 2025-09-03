@@ -26,11 +26,11 @@ def calcular_resultado(contrato, fixos, variavel, aliquota, reserva):
         "liquido": lucro_liquido
     }
 
-@app.route("/")
-def home():
-    return render_template("index.html")
+# @app.route("/")
+# def home():
+#     return render_template("index.html")
 
-@app.route("/calcular", methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST"])
 def calcular():
     if request.method == "POST":
         contrato = request.form.get("contrato")

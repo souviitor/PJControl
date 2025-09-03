@@ -2,22 +2,29 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/style.css">
     <title>Resultado</title>
 </head>
 <body>
-    <h2>Resultado do cálculo</h2>
+    <!-- <div class="adsense-box">
+        <p>Espaço para anúncio</p>
+    </div> -->
 
-    {% if resultado is string %}
-        <p>{{ resultado }}</p>
-    {% else %}
-        <p>Valor do contrato: R$ {{ resultado.contrato }}</p>
-        <p>Custos fixos: R$ {{ resultado.fixos }}</p>
-        <p>Custos variáveis: R$ {{ resultado.variavel }}</p>
-        <p>Imposto: R$ {{ resultado.imposto }}</p>
-        <p>Reserva: R$ {{ resultado.reserva }}</p>
-        <p><b>Valor líquido: R$ {{ resultado.liquido }}</b></p>
-    {% endif %}
+    <div class="container">
+        <h2>Resultado do cálculo</h2>
 
-    <a href="/calcular">Voltar</a>
+        {% if resultado is string %}
+            <p>{{ resultado }}</p>
+        {% else %}
+            <p>Valor do contrato: R$ {{ resultado.contrato }}</p>
+            <p>Custos fixos: R$ {{ resultado.fixos }}</p>
+            <p>Custos variáveis: R$ {{ resultado.variavel }}</p>
+            <p>Imposto: R$ {{ resultado.imposto }}</p>
+            <p>Reserva: R$ {{ resultado.reserva }}</p>
+            <p><b>Valor líquido: R$ {{ resultado.liquido }}</b></p>
+        {% endif %}
+
+        <a href="/">Voltar</a>
+    </div>
 </body>
 </html>
