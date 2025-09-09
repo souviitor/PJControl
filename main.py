@@ -2,9 +2,9 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-def calcular_resultado(contrato, fixos, variavel, aliquota, reserva):
+def calcular_resultado(base_calculo, fixos, variavel, aliquota, reserva):
     try:
-        contrato = float(contrato)
+        base_calculo = float(base_calculo)
         fixos = float(fixos)
         variavel = float(variavel)
         aliquota = float(aliquota) / 100
@@ -13,12 +13,12 @@ def calcular_resultado(contrato, fixos, variavel, aliquota, reserva):
         return "Erro: Preencha todos os campos com números"
 
     custo_total = fixos + variavel
-    imposto = contrato * aliquota
-    valor_reserva = contrato * reserva
-    lucro_liquido = contrato - custo_total - imposto - valor_reserva
+    imposto = base_calculo * aliquota
+    valor_reserva = base_calculo * reserva
+    lucro_liquido = base_calculo - custo_total - imposto - valor_reserva
 
     return {
-        "contrato": contrato,
+        "base_calculo": base_calculo,
         "fixos": fixos,
         "variavel": variavel,
         "imposto": imposto,
@@ -33,13 +33,13 @@ def calcular_resultado(contrato, fixos, variavel, aliquota, reserva):
 @app.route("/", methods=["GET", "POST"])
 def calcular():
     if request.method == "POST":
-        contrato = request.form.get("contrato")
+        base_calculo = request.form.get("base_calculo")
         fixos = request.form.get("fixos")
         variavel = request.form.get("variavel")
         aliquota = request.form.get("aliquota")
         reserva = request.form.get("reserva")
 
-        resultado = calcular_resultado(contrato, fixos, variavel, aliquota,
+        resultado = calcular_resultado(base_calculo, fixos, variavel, aliquota,
                                     reserva)
         return render_template("resultado.html", resultado=resultado)
 
