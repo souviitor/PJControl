@@ -16,12 +16,14 @@
         {% if resultado is string %}
             <p>{{ resultado }}</p>
         {% else %}
-            <p>Valor da base de calculo: R$ {{ resultado.base_calculo }}</p>
-            <p>Custos fixos: R$ {{ resultado.fixos }}</p>
-            <p>Custos variáveis: R$ {{ resultado.variavel }}</p>
-            <p>Imposto: R$ {{ resultado.imposto }}</p>
-            <p>Reserva: R$ {{ resultado.reserva }}</p>
-            <p><b>Valor líquido: R$ {{ resultado.liquido }}</b></p>
+        <p>Valor da base de cálculo: R$ {{ "%.2f"|format(resultado.base_calculo) }}</p>
+        <p>Pro-Labore: R$ {{ "%.2f"|format(resultado.prolabore) }}</p>
+        <p>DAS: R$ {{ "%.2f"|format(resultado.das) }}</p>
+        <p>INSS: R$ {{ "%.2f"|format(resultado.inss) }}</p>
+        <p>Custos fixos: R$ {{ "%.2f"|format(resultado.fixos) }}</p>
+        <p>Custos variáveis: R$ {{ "%.2f"|format(resultado.variavel) }}</p>
+        <p>Reserva: R$ {{ "%.2f"|format(resultado.reserva) }}</p>
+        <p><b>Valor líquido: R$ {{ "%.2f"|format(resultado.liquido) }}</b></p>
         {% endif %}
 
         <a href="/">Voltar</a>
