@@ -7,7 +7,6 @@
 </head>
 <body>
     <!-- <div class="adsense-box">
-
         <p>Espaço para anúncio</p>
     </div> -->
 
@@ -15,14 +14,27 @@
         <h1>Bem vindo a PJControl</h1>
         <h2>Preencha os dados abaixo:</h2>
         <form method="POST">
-            Valor da base de calculo: <input type="text" name="base_calculo"><br>
-            Pro-Labore: <input type="text" name="prolabore"><br>
-            DAS %: <input type="text" name="das"><br>
-            INSS %: <input type="text" name="inss"><br>
-            Custos fixos: <input type="text" name="fixos"><br>
-            Custos variáveis: <input type="text" name="variavel"><br>
-        <!-- % Aliquota: <input type="text" name="aliquota"><br>-->
-            % Reserva: <input type="text" name="reserva"><br>
+            Valor da base de calculo:
+            <input type="number" inputmode="numeric" pattern="[0-9]*" name="base_calculo"><br>
+
+            Pro-Labore:
+            <input type="number" inputmode="numeric" pattern="[0-9]*" name="prolabore"><br>
+
+            DAS %:
+            <input type="number" inputmode="numeric" pattern="[0-9]*" name="das"><br>
+
+            INSS %:
+            <input type="number" inputmode="numeric" pattern="[0-9]*" name="inss"><br>
+
+            Custos fixos:
+            <input type="number" inputmode="numeric" pattern="[0-9]*" name="fixos"><br>
+
+            Custos variáveis:
+            <input type="number" inputmode="numeric" pattern="[0-9]*" name="variavel"><br>
+
+            % Reserva:
+            <input type="number" inputmode="numeric" pattern="[0-9]*" name="reserva"><br>
+
             <button type="submit">Calcular</button>
         </form>
     </div>

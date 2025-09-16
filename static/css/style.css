@@ -86,22 +86,25 @@ a:hover {
     align-items: center;
 }
 
-/* Responsividade */
-@media (max-width: 2040px) {
+
+/* Responsividade: de 360px até 1024px (iPad Pro) */
+@media (min-width: 360px) and (max-width: 1024px) {
     body {
-        padding: 1px;
+        justify-content: center;
+        align-items: center; /* centraliza no mobile */
+        padding: 10px;
     }
     .container {
-        padding: 5px;
+        margin: 0; /* remove espaçamento extra */
+        width: 100%;
+        max-width: 500px; /* limita para não esticar demais */
+        padding: 15px;
     }
-}
-
-@media (max-width: 430px) {
     h1, h2 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
     input, button {
-        font-size: 0.9rem;
-        padding: 10px;
+        font-size: 1rem;
+        padding: 12px;
     }
 }
